@@ -1,0 +1,10 @@
+SELECT 
+    COUNT(*) AS total_rows,
+    SUM(CASE WHEN customer_ID IS NULL THEN 1 ELSE 0 END) AS null_customer_ID,
+    SUM(CASE WHEN name IS NULL THEN 1 ELSE 0 END) AS null_name,
+    SUM(CASE WHEN email IS NULL THEN 1 ELSE 0 END) AS null_email,
+    SUM(CASE WHEN Phone IS NULL THEN 1 ELSE 0 END) AS null_phone,
+    SUM(CASE WHEN date_of_birth IS NULL THEN 1 ELSE 0 END) AS null_dob,
+    SUM(CASE WHEN Account_Balance IS NULL THEN 1 ELSE 0 END) AS null_account_balance,
+    SUM(CASE WHEN Join_Date IS NULL THEN 1 ELSE 0 END) AS null_join_date
+FROM customers;
